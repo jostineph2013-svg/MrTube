@@ -13,7 +13,7 @@
             padding: 0;
         }
 
-        /* PANTALLA DE BIENVENIDA (VERSIÓN BETA LARGO) */
+        /* PANTALLA DE BIENVENIDA */
         #welcome-screen {
             position: fixed;
             top: 0;
@@ -185,7 +185,7 @@
             padding-bottom: 15px;
         }
         
-        /* CANAL Y AVATAR REAL */
+        /* CANAL Y AVATAR */
         .channel-profile {
             display: flex;
             align-items: center;
@@ -197,6 +197,7 @@
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid #3e3e3e;
+            background-color: #1a1a1a;
         }
         
         /* BOTÓN SUSCRIBIRSE */
@@ -259,6 +260,7 @@
 </head>
 <body>
 
+    <!-- 1. PANTALLA DE BIENVENIDA -->
     <div id="welcome-screen">
         <div class="welcome-content">
             <div class="welcome-logo">Mr<span id="welcome-span">Tube</span></div>
@@ -277,6 +279,7 @@
         </div>
     </div>
 
+    <!-- 2. BARRA SUPERIOR -->
     <nav>
         <div class="logo" onclick="recargarPagina()">Mr<span>Tube</span></div>
         <div class="nav-right">
@@ -288,6 +291,7 @@
         </div>
     </nav>
 
+    <!-- 3. CONTENEDOR PRINCIPAL -->
     <div class="main-container">
         <div class="main-player">
             <iframe src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -297,10 +301,11 @@
             <h1 id="main-video-title" class="video-title">El Misterio De Chicken Gun | Tráiler Oficial</h1>
             <div class="channel-row">
                 <div class="channel-profile">
-                    <img class="avatar-img" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl" alt="Mr.Jostin Avatar">
+                    <!-- AHORA BUSCA LA IMAGEN LOCAL QUE SUBISTE -->
+                    <img class="avatar-img" src="avatar.png" alt="Mr.Jostin Avatar">
                     <div>
                         <strong style="font-size: 16px;">Mr.Jostin</strong>
-                        <span id="sub-count" style="font-size: 12px; color: #aaa; display: block;">15.2 K suscriptores • ABG Productions®</span>
+                        <span id="sub-count" style="font-size: 12px; color: #aaa; display: block;">0 suscriptores • ABG Productions®</span>
                     </div>
                 </div>
                 <button id="btn-sub" class="subscribe-btn" onclick="alternarSuscripcion()">Suscribirse</button>
@@ -313,7 +318,7 @@
             <div class="video-card">
                 <div class="thumbnail" id="thumb1">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
                         <h4 class="coming-soon-text">Próximamente</h4>
                         <p>ABG Productions®</p>
@@ -324,7 +329,7 @@
             <div class="video-card">
                 <div class="thumbnail" id="thumb2">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
                         <h4 class="coming-soon-text">Próximamente</h4>
                         <p>Sprunki Animations Studios</p>
@@ -335,7 +340,7 @@
             <div class="video-card">
                 <div class="thumbnail" id="thumb3">PRÓXIMAMENTE</div>
                 <div class="card-info">
-                    <img class="avatar-img" style="width:30px; height:30px;" src="https://lh3.googleusercontent.com/d/1X6G047qXgDAnfWJq8NisS99g7Q2R7Acl">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
                         <h4 class="coming-soon-text">Próximamente</h4>
                         <p>Mr.Jostin</p>
@@ -345,53 +350,66 @@
         </div>
     </div>
 
+    <!-- 4. SCRIPT -->
     <script>
-        // Cierra la pantalla de bienvenida
         function entrarAMrTube() {
             document.getElementById('welcome-screen').style.display = 'none';
         }
 
-        // Recarga la página al hacer clic en el logo
         function recargarPagina() {
             location.reload();
         }
 
-        // Muestra/Oculta el menú de idiomas
         function toggleLangMenu() {
             var menu = document.getElementById('lang-menu');
-            if (menu.style.display === 'block') {
-                menu.style.display = 'none';
-            } else {
-                menu.style.display = 'block';
-            }
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
         }
 
-        // Sistema dinámico de Suscriptores
-        var suscrito = false;
-        function alternarSuscripcion() {
+        var idiomaActual = 'es';
+        var totalSuscriptores = localStorage.getItem('mrtube_subs') ? parseInt(localStorage.getItem('mrtube_subs')) : 0;
+        var estadoSuscrito = localStorage.getItem('mrtube_is_subbed') === 'true';
+
+        function actualizarPantallaSubs() {
             var btn = document.getElementById('btn-sub');
-            var count = document.getElementById('sub-count');
+            var countSpan = document.getElementById('sub-count');
             
-            if (!suscrito) {
-                btn.innerText = "Suscrito";
+            if (estadoSuscrito) {
+                btn.innerText = (idiomaActual === 'es') ? "Suscrito" : "Subscribed";
                 btn.classList.add('subscribed');
-                count.innerText = "15.3 K suscriptores • ABG Productions®"; // Sube un suscriptor
-                suscrito = true;
             } else {
-                btn.innerText = "Suscribirse";
+                btn.innerText = (idiomaActual === 'es') ? "Suscribirse" : "Subscribe";
                 btn.classList.remove('subscribed');
-                count.innerText = "15.2 K suscriptores • ABG Productions®"; // Baja
-                suscrito = false;
+            }
+
+            if (idiomaActual === 'es') {
+                countSpan.innerText = totalSuscriptores + " suscriptores • ABG Productions®";
+            } else {
+                countSpan.innerText = totalSuscriptores + " subscribers • ABG Productions®";
             }
         }
 
-        // Traductor de Idiomas (Español / Inglés)
+        actualizarPantallaSubs();
+
+        function alternarSuscripcion() {
+            if (!estadoSuscrito) {
+                totalSuscriptores += 1;
+                estadoSuscrito = true;
+            } else {
+                totalSuscriptores -= 1;
+                estadoSuscrito = false;
+            }
+
+            localStorage.setItem('mrtube_subs', totalSuscriptores);
+            localStorage.setItem('mrtube_is_subbed', estadoSuscrito);
+            actualizarPantallaSubs();
+        }
+
         function cambiarIdioma(lang) {
+            idiomaActual = lang;
             document.getElementById('lang-menu').style.display = 'none';
             var comingSoonElements = document.getElementsByClassName('coming-soon-text');
             
             if (lang === 'en') {
-                // Cambios a Inglés
                 document.getElementById('beta-title').innerText = "⚠️ Welcome to the Beta Test Version!";
                 document.getElementById('beta-p1').innerText = "Hello to all followers and visitors. You are officially entering the technical testing and optimization phase of the independent platform MrTube.";
                 document.getElementById('beta-p2').innerText = "Please keep the following in mind before continuing:";
@@ -409,16 +427,7 @@
                 for(var i=0; i<comingSoonElements.length; i++) {
                     comingSoonElements[i].innerText = "Coming Soon";
                 }
-                
-                if(!suscrito) {
-                    document.getElementById('btn-sub').innerText = "Subscribe";
-                    document.getElementById('sub-count').innerText = "15.2 K subscribers • ABG Productions®";
-                } else {
-                    document.getElementById('btn-sub').innerText = "Subscribed";
-                    document.getElementById('sub-count').innerText = "15.3 K subscribers • ABG Productions®";
-                }
             } else {
-                // Cambios a Español
                 document.getElementById('beta-title').innerText = "⚠️ ¡Bienvenido a la Versión Beta de Prueba!";
                 document.getElementById('beta-p1').innerText = "Hola a todos los seguidores y visitantes. Estás ingresando oficialmente a la fase de pruebas técnicas y optimización de la plataforma independiente MrTube.";
                 document.getElementById('beta-p2').innerText = "Por favor, ten en cuenta lo siguiente antes de continuar:";
@@ -436,15 +445,8 @@
                 for(var i=0; i<comingSoonElements.length; i++) {
                     comingSoonElements[i].innerText = "Próximamente";
                 }
-                
-                if(!suscrito) {
-                    document.getElementById('btn-sub').innerText = "Suscribirse";
-                    document.getElementById('sub-count').innerText = "15.2 K suscriptores • ABG Productions®";
-                } else {
-                    document.getElementById('btn-sub').innerText = "Suscrito";
-                    document.getElementById('sub-count').innerText = "15.3 K suscriptores • ABG Productions®";
-                }
             }
+            actualizarPantallaSubs();
         }
     </script>
 </body>
