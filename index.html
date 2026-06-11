@@ -424,13 +424,18 @@
                 <button class="config-btn" style="background-color:#ccc; color:#000;" onclick="cambiarTema('claro')">Blanco</button>
             </div>
 
-            <!-- NUEVA SECCIÓN DE CONFIGURACIÓN DE COLOR DEL LOGO -->
             <div class="settings-section">
                 <h3 id="logo-section-title">Color del Logo</h3>
-                <button class="color-picker-btn" style="background-color: #0000ff;" onclick="cambiarColorLogo('#0000ff')">Azul</button>
-                <button class="color-picker-btn" style="background-color: #00aa00;" onclick="cambiarColorLogo('#00aa00')">Verde</button>
                 <button class="color-picker-btn" style="background-color: #ff0000;" onclick="cambiarColorLogo('#ff0000')">Rojo</button>
+                <button class="color-picker-btn" style="background-color: #ff6600;" onclick="cambiarColorLogo('#ff6600')">Anaranjado</button>
                 <button class="color-picker-btn" style="background-color: #ffcc00; color: #000;" onclick="cambiarColorLogo('#ffcc00')">Amarillo</button>
+                <button class="color-picker-btn" style="background-color: #00aa00;" onclick="cambiarColorLogo('#00aa00')">Verde</button>
+                <button class="color-picker-btn" style="background-color: #0000ff;" onclick="cambiarColorLogo('#0000ff')">Azul</button>
+                <button class="color-picker-btn" style="background-color: #800080;" onclick="cambiarColorLogo('#800080')">Morado</button>
+                <button class="color-picker-btn" style="background-color: #ffc0cb; color: #000;" onclick="cambiarColorLogo('#ffc0cb')">Rosa</button>
+                <button class="color-picker-btn" style="background-color: #ff00ff;" onclick="cambiarColorLogo('#ff00ff')">Fuchsia</button>
+                <button class="color-picker-btn" style="background-color: #ff9999; color: #000;" onclick="cambiarColorLogo('#ff9999')">Rojo Blanco</button>
+                <button class="color-picker-btn" style="background-color: #4a0000;" onclick="cambiarColorLogo('#4a0000')">Rojo Negro</button>
                 <button class="color-picker-btn" style="background-color: #000000; border: 1px solid #555;" onclick="cambiarColorLogo('#000000')">Negro</button>
             </div>
 
@@ -446,6 +451,8 @@
                     <option value="epanola">ePaÑoLa</option>
                     <option value="es">Español</option>
                     <option value="en">English</option>
+                    <option value="ar">العربية (Árabe)</option>
+                    <option value="morse">Código Morse (• —)</option>
                     <option value="af">Afrikaans (África)</option>
                     <option value="ru">Русский (Ruso)</option>
                     <option value="pt">Português (Portugués)</option>
@@ -481,7 +488,6 @@
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div class="video-grid">
-            <!-- VIDEO 1 NUEVO: EL MISTERIO DE CHICKEN GUN T2 E2 -->
             <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/xs7MKyHpRh0', 'El Misterio De Chicken Gun T2 E2')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/xs7MKyHpRh0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
@@ -493,7 +499,6 @@
                 </div>
             </div>
 
-            <!-- VIDEO 2 NUEVO: DANDY'S WORLD SHOW T2 E5 -->
             <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-e9bjdtB8AI', 'Dandy’s World Show T2 E5')">
                 <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/-e9bjdtB8AI/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
@@ -505,7 +510,6 @@
                 </div>
             </div>
 
-            <!-- VIDEO 3: SE QUEDA EN PROXIMAMENTE -->
             <div class="video-card">
                 <div class="thumbnail" id="thumb3">PROXIMAMENTE</div>
                 <div class="card-info">
@@ -526,7 +530,7 @@
     </div>
 
     <script>
-        // TRADUCCIONES GLOBALES (11 IDIOMAS) - INCLUYE EL IDIOMA TROLL "ePaÑoLa"
+        // TRADUCCIONES GLOBALES ACTUALIZADAS (13 IDIOMAS CON ÁRABE Y MORSE)
         const traducciones = {
             epanola: {
                 beta_title: "⚠️ ¡Benbenio a la Bersio Beta de Pruebax! Xd",
@@ -553,6 +557,58 @@
                 yt_title: "¿Keres ber mas bideos orijinalis? XD",
                 yt_desc: "Apoya el canal de Yutub para mas capis xd.",
                 yt_btn: "Suscribise en Yutub XD"
+            },
+            ar: {
+                beta_title: "⚠️ مرحبًا بك في النسخة التجريبية (Beta)!",
+                beta_p1: "مرحبًا بجميع المتابعين والزوار. أنت تدخل رسميًا مرحلة الاختبار الفني والتحسين لمنصتنا المستقلة <strong>MrTube</strong>.",
+                beta_p2: "يرجى مراعاة ما يلي قبل المتابعة:",
+                beta_p3: "• فيديوهات مفقودة: في الوقت الحالي، شبكة الفيديوهات قيد الصيانة. سترى علامة 'قريبًا'.",
+                beta_p4: "• أخطاء مؤقتة: بسبب اختبار المشغلات، قد تواجه بعض الميزات تأخيرًا طفيفًا على الهواتف.",
+                beta_p5: "نشكركم بعمق على صبركم ودعمكم المستمر لتوسيع إنتاجاتنا لكل المجتمع.",
+                scroll_text: "قم بالتمرير لأسفل للمتابعة",
+                btn_continue: "متابعة",
+                recommended_title: "فيديوهات مقترحة",
+                coming_soon: "قريبًا",
+                sub_text: "اشتراك",
+                subbed_text: "مشترك",
+                sub_count_suffix: "مشتركين • ABG Productions®",
+                settings_title: "الإعدادات",
+                theme_title: "المظهر البصري",
+                logo_title: "لون الشعار",
+                ade_title: "الأداء (ADE)",
+                ade_on: "تفعيل ADE",
+                ade_off: "إيقاف ADE",
+                ade_desc: "قم بتفعيله لتقليل استهلاك الموارد وجعل التصفح سلسًا للغاية.",
+                lang_title: "لغة الواجهة",
+                yt_title: "هل تريد رؤية المزيد من المحتوى الرسمي؟",
+                yt_desc: "ادعم الإنتاجات الأصلية للقناة مباشرة على YouTube.",
+                yt_btn: "الاشتراك في YouTube"
+            },
+            morse: {
+                beta_title: "⚠️ •— •••— •—•• ——— ——— ••— •—•—•",
+                beta_p1: "•••• ——— •—•• —— •— ——— •—• ••• ••— ••• •••• •• ——— •—• ••• •••— •• ••• •• — •— —• ——— <strong>MrTube</strong> •—•• •——•",
+                beta_p2: "•——• •—•• •— •—•• ••• • ••• • •—•• ••• •• ——• •• ••— •• •—•—•",
+                beta_p3: "• •••— •• —•• •——— ——— ••• ——— ••— •••",
+                beta_p4: "• •——• •—• •—• ——— •—• ••• •••• ————",
+                beta_p5: "—— •— —• •• •—•—•",
+                scroll_text: "••— •—•—•",
+                btn_continue: "•— •—• —•— •—",
+                recommended_title: "••— •••• ——— ———",
+                coming_soon: "•——• •—• ——— ••••",
+                sub_text: "••• ••— •••",
+                subbed_text: "••• ••— ••• •—•• •—•",
+                sub_count_suffix: "••• ••— ••• •—•• •—• —••— ABG Productions®",
+                settings_title: "—— •—• ••• •",
+                theme_title: "—— ——— —•• •",
+                logo_title: "•—•• ——— ——• ———",
+                ade_title: "•— —•• •",
+                ade_on: "•— —•• • •—•—•",
+                ade_off: "•— —•• • ——— ••—• ••—•",
+                ade_desc: "••• ••— •—•—•",
+                lang_title: "•—•• •— —• ——•",
+                yt_title: "•—• ——— •——— ———",
+                yt_desc: "••• ••— •—•—•",
+                yt_btn: "••• ••— ••• ——— —• YouTube"
             },
             en: {
                 beta_title: "⚠️ Welcome to the Beta Test Version!",
@@ -600,7 +656,7 @@
                 ade_title: "Rendimiento (ADE)",
                 ade_on: "ADE: Encendido",
                 ade_off: "ADE: Apagado",
-                ade_desc: "Activalo para consumir menos recursos y hacer la navegacion muy fluida.",
+                ade_desc: "Activalo para OpenCV consumir menos recursos y hacer la navegacion muy fluida.",
                 lang_title: "Idioma de la Interfaz",
                 yt_title: "¿Quieres ver mas contenido oficial?",
                 yt_desc: "Apoya las producciones originales del canal directamente en YouTube.",
