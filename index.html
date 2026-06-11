@@ -15,6 +15,7 @@
             --btn-sub-text: #0f0f0f;
             --shadow-style: 0 4px 15px rgba(0,0,0,0.5);
             --transition-speed: 0.3s;
+            --logo-bg-color: #ff0000; /* Color inicial del logo */
         }
 
         .light-theme {
@@ -76,7 +77,7 @@
             margin-bottom: 20px;
         }
         .welcome-logo span {
-            background-color: #ff0000;
+            background-color: var(--logo-bg-color);
             color: #fff;
             padding: 4px 12px;
             border-radius: 8px;
@@ -134,7 +135,7 @@
             user-select: none;
         }
         .logo span {
-            background-color: #ff0000;
+            background-color: var(--logo-bg-color);
             color: #fff;
             padding: 2px 8px;
             border-radius: 6px;
@@ -216,6 +217,22 @@
         .config-btn.active {
             background-color: #00aa00;
         }
+        
+        /* BOTONES ESPECÍFICOS DE COLORES DEL LOGO */
+        .color-picker-btn {
+            border: 2px solid transparent;
+            padding: 10px 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        .color-picker-btn:hover {
+            border-color: var(--text-color);
+        }
+
         .lang-select {
             width: 100%;
             padding: 10px;
@@ -311,6 +328,7 @@
         }
         .video-card {
             text-align: left;
+            cursor: pointer;
         }
         .thumbnail {
             width: 100%;
@@ -324,6 +342,8 @@
             color: #777;
             border: 1px solid var(--border-color);
             font-weight: bold;
+            background-size: cover;
+            background-position: center;
         }
         .card-info {
             display: flex;
@@ -387,7 +407,7 @@
     </div>
 
     <nav>
-        <div class="logo" onclick="recargarPagina()">Mr<span>Tube</span></div>
+        <div class="logo" onclick="recargarPagina()">Mr<span class="logo-text-box">Tube</span></div>
         <div class="nav-right">
             <button class="settings-btn" onclick="abrirAjustes()">⚙️</button>
         </div>
@@ -402,6 +422,16 @@
                 <h3 id="theme-section-title">Tema Visual</h3>
                 <button class="config-btn" onclick="cambiarTema('oscuro')">Negro</button>
                 <button class="config-btn" style="background-color:#ccc; color:#000;" onclick="cambiarTema('claro')">Blanco</button>
+            </div>
+
+            <!-- NUEVA SECCIÓN DE CONFIGURACIÓN DE COLOR DEL LOGO -->
+            <div class="settings-section">
+                <h3 id="logo-section-title">Color del Logo</h3>
+                <button class="color-picker-btn" style="background-color: #0000ff;" onclick="cambiarColorLogo('#0000ff')">Azul</button>
+                <button class="color-picker-btn" style="background-color: #00aa00;" onclick="cambiarColorLogo('#00aa00')">Verde</button>
+                <button class="color-picker-btn" style="background-color: #ff0000;" onclick="cambiarColorLogo('#ff0000')">Rojo</button>
+                <button class="color-picker-btn" style="background-color: #ffcc00; color: #000;" onclick="cambiarColorLogo('#ffcc00')">Amarillo</button>
+                <button class="color-picker-btn" style="background-color: #000000; border: 1px solid #555;" onclick="cambiarColorLogo('#000000')">Negro</button>
             </div>
 
             <div class="settings-section">
@@ -430,7 +460,7 @@
 
     <div class="main-container">
         <div class="main-player">
-            <iframe src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe id="main-iframe" src="https://www.youtube.com/embed/qvhFdTaMyCs" title="MrTube Player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         
         <div class="video-info">
@@ -450,28 +480,31 @@
         <h2 id="recommended-title" class="section-title">Videos Recomendados</h2>
         
         <div class="video-grid">
-            <div class="video-card">
-                <div class="thumbnail" id="thumb1">PROXIMAMENTE</div>
+            <!-- VIDEO 1 NUEVO: EL MISTERIO DE CHICKEN GUN T2 E2 -->
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/xs7MKyHpRh0', 'El Misterio De Chicken Gun T2 E2')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/xs7MKyHpRh0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
-                        <h4 class="coming-soon-text">Proximamente</h4>
+                        <h4>El Misterio De Chicken Gun T2 E2</h4>
                         <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
-            <div class="video-card">
-                <div class="thumbnail" id="thumb2">PROXIMAMENTE</div>
+            <!-- VIDEO 2 NUEVO: DANDY'S WORLD SHOW T2 E5 -->
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/-e9bjdtB8AI', 'Dandy’s World Show T2 E5')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/-e9bjdtB8AI/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
                 <div class="card-info">
                     <img class="avatar-img" style="width:30px; height:30px;" src="avatar.png">
                     <div class="card-text">
-                        <h4 class="coming-soon-text">Proximamente</h4>
-                        <p>Sprunki Animations Studios</p>
+                        <h4>Dandy’s World Show T2 E5</h4>
+                        <p>ABG Productions®</p>
                     </div>
                 </div>
             </div>
 
+            <!-- VIDEO 3: SE QUEDA EN PROXIMAMENTE -->
             <div class="video-card">
                 <div class="thumbnail" id="thumb3">PROXIMAMENTE</div>
                 <div class="card-info">
@@ -492,7 +525,7 @@
     </div>
 
     <script>
-        // TRADUCCIONES GLOBALES (10 IDIOMAS) - CORREGIDAS SIN TILDES INTERNAS CONFLICTIVAS
+        // TRADUCCIONES GLOBALES (10 IDIOMAS) - ACTUALIZADAS CON TRADUCCIÓN PARA EL NUEVO MENÚ DEL LOGO
         const traducciones = {
             en: {
                 beta_title: "⚠️ Welcome to the Beta Test Version!",
@@ -510,6 +543,7 @@
                 sub_count_suffix: "subscribers • ABG Productions®",
                 settings_title: "Settings",
                 theme_title: "Visual Theme",
+                logo_title: "Logo Color",
                 ade_title: "Performance (ADE)",
                 ade_on: "ADE: ON",
                 ade_off: "ADE: OFF",
@@ -535,6 +569,7 @@
                 sub_count_suffix: "suscriptores • ABG Productions®",
                 settings_title: "Configuracion",
                 theme_title: "Tema Visual",
+                logo_title: "Color del Logo",
                 ade_title: "Rendimiento (ADE)",
                 ade_on: "ADE: Encendido",
                 ade_off: "ADE: Apagado",
@@ -560,10 +595,11 @@
                 sub_count_suffix: "intekenare • ABG Productions®",
                 settings_title: "Instellings",
                 theme_title: "Visuele Tema",
+                logo_title: "Logo Kleur",
                 ade_title: "Prestasie (ADE)",
                 ade_on: "ADE: AAN",
                 ade_off: "ADE: AF",
-                ade_desc: "Skakel aan om hulpbronne te bespaar en blaai uiters glad te maak.",
+                ade_desc: "Skakel aan om hulpbronne te bespaar und blaai uiters glad te maak.",
                 lang_title: "Koppelvlak-taal",
                 yt_title: "Wil jy meer amptelike inhoud sien?",
                 yt_desc: "Ondersteun oorspronklike produksies direk op YouTube.",
@@ -585,6 +621,7 @@
                 sub_count_suffix: "подписчиков • ABG Productions®",
                 settings_title: "Настройки",
                 theme_title: "Визуальная тема",
+                logo_title: "Цвет логотипа",
                 ade_title: "Производительность (ADE)",
                 ade_on: "ADE: ВКЛ",
                 ade_off: "ADE: ВЫКЛ",
@@ -610,10 +647,11 @@
                 sub_count_suffix: "inscritos • ABG Productions®",
                 settings_title: "Configurações",
                 theme_title: "Tema Visual",
+                logo_title: "Cor do Logótipo",
                 ade_title: "Desempenho (ADE)",
                 ade_on: "ADE: Ligado",
                 ade_off: "ADE: Desligado",
-                ade_desc: "Ative para मासूम menos recursos e rodar de forma super fluida.",
+                ade_desc: "Ative para consumir menos recursos e rodar de forma super fluida.",
                 lang_title: "Idioma da Interface",
                 yt_title: "Quer ver mais conteúdo oficial?",
                 yt_desc: "Apoie as produções originais direto no YouTube.",
@@ -635,6 +673,7 @@
                 sub_count_suffix: "位订阅者 • ABG Productions®",
                 settings_title: "设置",
                 theme_title: "视觉主题",
+                logo_title: "标志颜色",
                 ade_title: "性能模式 (ADE)",
                 ade_on: "ADE: 开启",
                 ade_off: "ADE: 关闭",
@@ -646,7 +685,7 @@
             },
             ja: {
                 beta_title: "⚠️ ベータテスト版へようこそ！",
-                beta_p1: "フォロワーの皆様。あなたは現在、MrTubeプラットフォーム의 기술 테스트페ーズに入っています。",
+                beta_p1: "フォロワーの皆様。あなたは現在、MrTubeプラットフォームの技術テストフェーズに入っています。",
                 beta_p2: "進む前に以下の点にご注意ください：",
                 beta_p3: "• ビデオの欠落: グリッドはメンテナンス中です。一部エリアは「まもなく公開」と表示されます。",
                 beta_p4: "• 一時的なエラー: プレイヤーのテスト中につき、スマホ等で読み込みに遅れが出る場合があります。",
@@ -660,6 +699,7 @@
                 sub_count_suffix: "人のチャンネル登録者 • ABG Productions®",
                 settings_title: "設定",
                 theme_title: "ビジュアルテーマ",
+                logo_title: "ロゴの色",
                 ade_title: "パフォーマンス (ADE)",
                 ade_on: "ADE: オン",
                 ade_off: "ADE: オフ",
@@ -685,6 +725,7 @@
                 sub_count_suffix: "명의 구독자 • ABG Productions®",
                 settings_title: "설정",
                 theme_title: "시각 테마",
+                logo_title: "로고 색상",
                 ade_title: "성능 모드 (ADE)",
                 ade_on: "ADE: 켜짐",
                 ade_off: "ADE: 꺼짐",
@@ -710,6 +751,7 @@
                 sub_count_suffix: "suscriptores • ABG Productions®",
                 settings_title: "Ajustes",
                 theme_title: "Tema Visual",
+                logo_title: "Color del Logo",
                 ade_title: "Rendimiento (ADE)",
                 ade_on: "ADE: Activado",
                 ade_off: "ADE: Desactivado",
@@ -735,6 +777,7 @@
                 sub_count_suffix: "suscriptores • ABG Productions®",
                 settings_title: "Configuracion",
                 theme_title: "Tema Visual",
+                logo_title: "Color del Logo",
                 ade_title: "Rendimiento (ADE)",
                 ade_on: "ADE: Activado",
                 ade_off: "ADE: Desactivado",
@@ -772,6 +815,12 @@
             }
         }
 
+        // NUEVA FUNCIÓN PARA CAMBIAR EL COLOR DEL LOGO (MANTENIENDO PREFERENCIA EN CACHE)
+        function cambiarColorLogo(color) {
+            document.documentElement.style.setProperty('--logo-bg-color', color);
+            localStorage.setItem('mrtube_logo_color', color);
+        }
+
         // SISTEMA ADE (AHORRO DE ESPACIO / RECURSOS)
         var adeActivo = false;
         function toggleADE() {
@@ -787,6 +836,17 @@
                 btn.classList.remove('active');
                 btn.innerText = traducciones[idiomaActual].ade_off;
             }
+        }
+
+        // Cargar color de logo guardado previamente
+        var colorLogoGuardado = localStorage.getItem('mrtube_logo_color') ? localStorage.getItem('mrtube_logo_color') : '#ff0000';
+        cambiarColorLogo(colorLogoGuardado);
+
+        // FUNCIÓN DINÁMICA PARA REPRODUCIR VIDEOS DESDE LA GRILLA
+        function cargarVideo(urlEmbed, tituloVideo) {
+            document.getElementById('main-iframe').src = urlEmbed + "?autoplay=1";
+            document.getElementById('main-video-title').innerText = tituloVideo;
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         // CONTROL DE IDIOMAS GLOBALIZADO
@@ -843,8 +903,6 @@
             
             // Reemplazar textos de la página
             document.getElementById('recommended-title').innerText = t.recommended_title;
-            document.getElementById('thumb1').innerText = t.coming_soon.toUpperCase();
-            document.getElementById('thumb2').innerText = t.coming_soon.toUpperCase();
             document.getElementById('thumb3').innerText = t.coming_soon.toUpperCase();
             
             var comingSoonElements = document.getElementsByClassName('coming-soon-text');
@@ -855,6 +913,7 @@
             // Textos de Ajustes
             document.getElementById('modal-settings-title').innerText = t.settings_title;
             document.getElementById('theme-section-title').innerText = t.theme_title;
+            document.getElementById('logo-section-title').innerText = t.logo_title; // Traducción para el color del logo
             document.getElementById('ade-section-title').innerText = t.ade_title;
             document.getElementById('ade-desc').innerText = t.ade_desc;
             document.getElementById('lang-section-title').innerText = t.lang_title;
