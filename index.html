@@ -30,6 +30,17 @@
             --shadow-style: 0 4px 15px rgba(0,0,0,0.1);
         }
 
+        /* NUEVO TEMA ADICIONAL: GRIS */
+        .gray-theme {
+            --bg-color: #444444;
+            --text-color: #ffffff;
+            --card-bg: #555555;
+            --border-color: #666666;
+            --btn-sub-bg: #222222;
+            --btn-sub-text: #ffffff;
+            --shadow-style: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
         /* CLASES DE FUENTES CONFIGURABLES */
         .font-montserrat { --web-font: 'Montserrat', sans-serif !important; }
         .font-rubik { --web-font: 'Rubik', sans-serif !important; }
@@ -485,6 +496,7 @@
                 <h3 id="theme-section-title">Tema Visual</h3>
                 <button class="config-btn" onclick="cambiarTema('oscuro')">Negro</button>
                 <button class="config-btn" style="background-color:#ccc; color:#000;" onclick="cambiarTema('claro')">Blanco</button>
+                <button class="config-btn" style="background-color:#888888; color:#fff;" onclick="cambiarTema('gris')">Gris</button>
             </div>
 
             <div class="settings-section">
@@ -523,6 +535,11 @@
                     <option value="ultra_emoji">🔥 Ultra Emoji 😎💥</option>
                     <option value="epanola">ePaÑoLa</option>
                     <option value="en">English</option>
+                    <option value="fr">Français (Francés)</option>
+                    <option value="de">Deutsch (Alemán)</option>
+                    <option value="id">Bahasa Indonesia (Indonesia)</option>
+                    <option value="it">Italiano (Italiano)</option>
+                    <option value="zh_mv">💡 中文 (Chino Mandarín)</option>
                     <option value="ar">العربية (Árabe)</option>
                     <option value="morse">Código Morse (• —)</option>
                     <option value="af">Afrikaans (África)</option>
@@ -615,6 +632,90 @@
                 </div>
             </div>
 
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/cMsKefgHhpk', '2econd 2ight 2eer || DW')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/cMsKefgHhpk/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>2econd 2ight 2eer || DW</h4>
+                        <p>Sprunki Animations Studios®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/TRX_s4ly49M', 'Sprunki Animado T4 E4')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/TRX_s4ly49M/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>Sprunki Animado T4 E4</h4>
+                        <p>Sprunki Animations Studios®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/e-WLd80odDo', '3 IDEAS QUE CAMBIARÍAN CG PARA SIEMPRE 😱🔥')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/e-WLd80odDo/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>3 IDEAS QUE CAMBIARÍAN CG PARA SIEMPRE 😱🔥</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card" onclick="cargarVideo('https://www.youtube.com/embed/Py7_RP2tXH0', 'El Misterio De Chicken Gun T2 E1')">
+                <div class="thumbnail" style="background-image: url('https://img.youtube.com/vi/Py7_RP2tXH0/mqdefault.jpg'); text-indent: -9999px;">VIDEO</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4>El Misterio De Chicken Gun T2 E1</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-card dynamic-coming-soon">
+                <div class="thumbnail">Próximamente</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4 class="coming-soon-text">Próximamente</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card dynamic-coming-soon">
+                <div class="thumbnail">Próximamente</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4 class="coming-soon-text">Próximamente</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card dynamic-coming-soon">
+                <div class="thumbnail">Próximamente</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4 class="coming-soon-text">Próximamente</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
+            <div class="video-card dynamic-coming-soon">
+                <div class="thumbnail">Próximamente</div>
+                <div class="card-info">
+                    <img class="avatar-img" style="width:30px; height:30px;" src="avatar.PNG">
+                    <div class="card-text">
+                        <h4 class="coming-soon-text">Próximamente</h4>
+                        <p>ABG Productions®</p>
+                    </div>
+                </div>
+            </div>
             <div class="video-card dynamic-coming-soon">
                 <div class="thumbnail">Próximamente</div>
                 <div class="card-info">
@@ -661,7 +762,7 @@
     </div>
 
     <script>
-        // TRADUCCIONES COMPLETAS CORREGIDAS
+        // TRADUCCIONES COMPLETAS CORREGIDAS MAS LOS NUEVOS IDIOMAS
         const traducciones = {
             ultra_emoji: {
                 beta_title: "⚠️🔥 ¡BIENVENIDO AL BETA SUPER EXTREMO! 💥😎",
@@ -795,13 +896,178 @@
                 vc_btn_on: "Switch to Mobile Mode",
                 vc_btn_off: "Switch to Desktop Mode"
             },
+            fr: {
+                beta_title: "⚠️ Bienvenue dans la Version Beta !",
+                beta_p1: "Bonjour à tous les abonnés et visiteurs. Vous entrez officiellement dans la phase de test de MrTube.",
+                beta_p2: "Veuillez noter les points suivants avant de continuer :",
+                beta_p3: "• Vidéos Manquantes : Pour le moment, la grille est en maintenance.",
+                beta_p4: "• Erreres Temporaires : Des ralentissements légers peuvent survenir sur mobile.",
+                beta_p5: "Merci pour votre patience et votre soutien continu.",
+                scroll_text: "Faites défiler vers le bas pour continuer",
+                btn_continue: "Continuer",
+                recommended_title: "Vidéos Recommandées",
+                coming_soon: "À venir",
+                sub_text: "S'abonner",
+                subbed_text: "Abonné",
+                sub_count_suffix: "abonnés • ABG Productions®",
+                settings_title: "Configuration",
+                theme_title: "Thème Visuel",
+                logo_title: "Couleur du Logo",
+                ade_title: "Performance (ADE)",
+                ade_on: "ADE: Activé",
+                ade_off: "ADE: Désactivé",
+                ade_desc: "Activez-le pour rendre la navigation super fluide.",
+                lang_title: "Langue de l'interface",
+                yt_title: "Voir plus de contenu officiel ?",
+                yt_desc: "Soutenez les productions originales directement sur YouTube.",
+                yt_btn: "S'abonner sur YouTube",
+                history_title: "HV (Historique Vidéo)",
+                history_empty: "Aucune vidéo vue pour le moment",
+                history_clear: "Effacer l'historique",
+                cf_title: "• CF (Changer la Police)",
+                vc_title: "• VC (Version Ordinateur)",
+                vc_btn_on: "Retour au Mode Mobile",
+                vc_btn_off: "Passer en Mode Ordinateur"
+            },
+            de: {
+                beta_title: "⚠️ Willkommen in der Beta-Testversion!",
+                beta_p1: "Hallo an alle Follower und Besucher. Sie betreten offiziell die Testphase von MrTube.",
+                beta_p2: "Bitte beachten Sie Folgendes, bevor Sie fortfahren:",
+                beta_p3: "• Fehlende Videos: Das Raster befindet sich derzeit in Wartung.",
+                beta_p4: "• Temporäre Fehler: Bei mobilen Verbindungen kann es zu Verzögerungen kommen.",
+                beta_p5: "Vielen Dank für Ihre Geduld und Unterstützung.",
+                scroll_text: "Scrollen Sie nach unten, um fortzufahren",
+                btn_continue: "Weiter",
+                recommended_title: "Empfohlene Videos",
+                coming_soon: "Demnächst",
+                sub_text: "Abonnieren",
+                subbed_text: "Abonniert",
+                sub_count_suffix: "Abonnenten • ABG Productions®",
+                settings_title: "Einstellungen",
+                theme_title: "Visuelles Thema",
+                logo_title: "Logo-Farbe",
+                ade_title: "Leistung (ADE)",
+                ade_on: "ADE: Eingeschaltet",
+                ade_off: "ADE: Ausgeschaltet",
+                ade_desc: "Aktivieren, um das Surfen extrem flüssig zu machen.",
+                lang_title: "Oberflächensprache",
+                yt_title: "Mehr offizielle Inhalte sehen?",
+                yt_desc: "Unterstützen Sie Originalproduktionen auf YouTube.",
+                yt_btn: "Auf YouTube abonnieren",
+                history_title: "HV (Video-Verlauf)",
+                history_empty: "Sie haben noch keine Videos gesehen",
+                history_clear: "Verlauf löschen",
+                cf_title: "• CF (Schriftart ändern)",
+                vc_title: "• VC (Computerversion)",
+                vc_btn_on: "Zum mobilen Modus wechseln",
+                vc_btn_off: "Zum Desktop-Modus wechseln"
+            },
+            id: {
+                beta_title: "⚠️ Selamat Datang di Versi Uji Coba Beta!",
+                beta_p1: "Halo untuk semua pengikut dan pengunjung. Anda resmi memasuki fase pengujian teknis platform MrTube.",
+                beta_p2: "Harap perhatikan hal-hal berikut sebelum melanjutkan:",
+                beta_p3: "• Video Hilang: Untuk saat ini, sistem kisi sedang dalam pemeliharaan.",
+                beta_p4: "• Kesalahan Sementara: Keterlambatan ringan mungkin terjadi pada koneksi seluler.",
+                beta_p5: "Kami sangat berterima kasih atas kesabaran dan dukungan berkelanjutan Anda.",
+                scroll_text: "Gulir ke bawah untuk melanjutkan",
+                btn_continue: "Lanjutkan",
+                recommended_title: "Video Rekomendasi",
+                coming_soon: "Segera Hadir",
+                sub_text: "Berlangganan",
+                subbed_text: "Subscribed",
+                sub_count_suffix: "pelanggan • ABG Productions®",
+                settings_title: "Pengaturan",
+                theme_title: "Tema Visual",
+                logo_title: "Warna Logo",
+                ade_title: "Performa (ADE)",
+                ade_on: "ADE: Menyala",
+                ade_off: "ADE: Mati",
+                ade_desc: "Aktifkan untuk membuat penjelajahan menjadi sangat lancar.",
+                lang_title: "Bahasa Antarmuka",
+                yt_title: "Ingin melihat konten resmi lainnya?",
+                yt_desc: "Dukung produksi asli saluran langsung di YouTube.",
+                yt_btn: "Berlangganan di YouTube",
+                history_title: "HV (Riwayat Video)",
+                history_empty: "Anda belum menonton video apa pun",
+                history_clear: "Hapus Riwayat",
+                cf_title: "• CF (Ubah Font)",
+                vc_title: "• VC (Versi Komputer)",
+                vc_btn_on: "Kembali ke Mode Seluler",
+                vc_btn_off: "Paksa Mode Komputer"
+            },
+            it: {
+                beta_title: "⚠️ Benvenuto nella Versione Beta di Prova!",
+                beta_p1: "Ciao a tutti i follower e visitatori. Stai entrando ufficialmente nella fase di test di MrTube.",
+                beta_p2: "Si prega di tenere a mente quanto segue prima di continuare:",
+                beta_p3: "• Video Mancanti: Al momento, la griglia è in manutenzione.",
+                beta_p4: "• Errori Temporanei: Potrebbero verificarsi lievi ritardi su dispositivi mobili.",
+                beta_p5: "Grazie mille per la pazienza e il supporto continuo.",
+                scroll_text: "Scorri verso il basso per continuare",
+                btn_continue: "Continua",
+                recommended_title: "Video Consigliati",
+                coming_soon: "Prossimamente",
+                sub_text: "Iscriviti",
+                subbed_text: "Iscritto",
+                sub_count_suffix: "iscritti • ABG Productions®",
+                settings_title: "Impostazioni",
+                theme_title: "Tema Visivo",
+                logo_title: "Colore del Logo",
+                ade_title: "Prestazioni (ADE)",
+                ade_on: "ADE: Attivo",
+                ade_off: "ADE: Disattivato",
+                ade_desc: "Attivalo per rendere la navigazione super fluida.",
+                lang_title: "Lingua dell'Interfaccia",
+                yt_title: "Vuoi vedere altri contenuti ufficiali?",
+                yt_desc: "Sostieni le produzioni originali direttamente su YouTube.",
+                yt_btn: "Iscriviti su YouTube",
+                history_title: "HV (Cronologia Video)",
+                history_empty: "Non hai ancora guardato nessun video",
+                history_clear: "Cancella Cronologia",
+                cf_title: "• CF (Cambia Carattere)",
+                vc_title: "• VC (Versione Computer)",
+                vc_btn_on: "Torna alla Modalità Mobile",
+                vc_btn_off: "Passa alla Modalità Computer"
+            },
+            zh_mv: {
+                beta_title: "⚠️ 欢迎来到测试版本！",
+                beta_p1: "各位粉丝和访客大家好。您现在已正式进入独立平台 MrTube 的技术测试与优化阶段。",
+                beta_p2: "在继续之前，请注意以下几点：",
+                beta_p3: "• 视频缺失：目前网格系统正在维护中。在文件建立索引时，您会看到‘即将推出’的标签。",
+                beta_p4: "• 临时错误：由于正在测试连接与集成播放器，移动设备上的界面可能会有轻微加载延迟。",
+                beta_p5: "我们衷心感谢您的耐心等待、错误反馈以及对拓展社区作品的持续支持。",
+                scroll_text: "向下滚动以继续",
+                btn_continue: "继续",
+                recommended_title: "推荐视频",
+                coming_soon: "即将推出",
+                sub_text: "订阅",
+                subbed_text: "已订阅",
+                sub_count_suffix: "位订阅者 • ABG Productions®",
+                settings_title: "设置",
+                theme_title: "视觉主题",
+                logo_title: "标志颜色",
+                ade_title: "性能模式 (ADE)",
+                ade_on: "ADE: 开启",
+                ade_off: "ADE: 关闭",
+                ade_desc: "开启此功能可减少资源消耗，让浏览非常流畅。",
+                lang_title: "界面语言",
+                yt_title: "想看更多官方内容吗？",
+                yt_desc: "前往 YouTube 官方频道支持我们的原创作品。",
+                yt_btn: "在 YouTube 上订阅",
+                history_title: "HV (播放历史记录)",
+                history_empty: "您还没有看 过任何视频",
+                history_clear: "清除历史",
+                cf_title: "• CF (更改字体)",
+                vc_title: "• VC (电脑版网站)",
+                vc_btn_on: "切换回手机模式",
+                vc_btn_off: "切换到电脑模式"
+            },
             ar: { beta_title: "⚠️ مرحبًا بك في النسخة التجريبية!", beta_p1: "مرحبًا بجميع المتابعين والزوار.", beta_p2: "يرجى مراعاة ما يلي:", beta_p3: "• فيديوهات مفقودة", beta_p4: "• أخطاء مؤقتة", beta_p5: "نشكركم على دعمكم.", scroll_text: "قم بالتمرير لأسفل", btn_continue: "متابعة", recommended_title: "فيديوهات مقترحة", coming_soon: "قريبًا", sub_text: "اشتراك", subbed_text: "مشترك", sub_count_suffix: "مشتركين • ABG Productions®", settings_title: "الإعدادات", theme_title: "المظهر البصري", logo_title: "لون الشعار", ade_title: "الأداء (ADE)", ade_on: "تفعيل ADE", ade_off: "إيقاف ADE", ade_desc: "اجعل التصفح سلسًا للغاية.", lang_title: "لغة الواجهة", yt_title: "المحتوى الرسمي؟", yt_desc: "ادعم القناة على YouTube.", yt_btn: "الاشتراك", history_title: "HV (سجل الفيديوهات)", history_empty: "لم تشاهد أي فيديو", history_clear: "مسح", cf_title: "CF (تغيير الخط)", vc_title: "VC (نسخة الكمبيوتر)", vc_btn_on: "تحويل إلى الهاتف", vc_btn_off: "تحويل إلى الكمبيوتر" },
             morse: { beta_title: "⚠️ •— •••—", beta_p1: "<strong>MrTube</strong>", beta_p2: "•——•", beta_p3: "• •••—", beta_p4: "• •——•", beta_p5: "——", scroll_text: "••—", btn_continue: "•—", recommended_title: "••—", coming_soon: "•——•", sub_text: "•••", subbed_text: "••• •—•", sub_count_suffix: "ABG Productions®", settings_title: "——", theme_title: "——", logo_title: "•—••", ade_title: "•—", ade_on: "•— •—•—•", ade_off: "—— ••—•", ade_desc: "•••", lang_title: "•—••", yt_title: "•—•", yt_desc: "•••", yt_btn: "YouTube", history_title: "HV", history_empty: "• ——", history_clear: "••—••", cf_title: "CF", vc_title: "VC", vc_btn_on: "Mobile •—", vc_btn_off: "PC —•—" },
             af: { beta_title: "⚠️ Welkom by Beta!", beta_p1: "Hallo aan alle volgelinge.", beta_p2: "Hou asseblief in gedagte:", beta_p3: "• Ontbrekende video's", beta_p4: "• Tydelike foute", beta_p5: "Ons waardeer u geduld.", scroll_text: "Rolle af", btn_continue: "Voortgaan", recommended_title: "Aanbevole Video's", coming_soon: "Binnekort", sub_text: "Teken in", subbed_text: "Ingeteken", sub_count_suffix: "intekenare • ABG Productions®", settings_title: "Instellings", theme_title: "Visuele Tema", logo_title: "Logo Kleur", ade_title: "Prestasie (ADE)", ade_on: "ADE: AAN", ade_off: "ADE: AF", ade_desc: "Blaai uiters glad te maak.", lang_title: "Koppelvlak-taal", yt_title: "Amptelike inhoud sien?", yt_desc: "Ondersteun op YouTube.", yt_btn: "Teken in", history_title: "HV (Geskiedenis)", history_empty: "Geen video's", history_clear: "Vee HV uit", cf_title: "CF (Verander Lettertipe)", vc_title: "VC (Rekenaar Weergawe)", vc_btn_on: "Skakel na Mobiel", vc_btn_off: "Skakel na Rekenaar" },
             ru: { beta_title: "⚠️ Бета-версия!", beta_p1: "Приветствуем всех.", beta_p2: "Обратите внимание:", beta_p3: "• Нет видео", beta_p4: "• Ошибки", beta_p5: "Спасибо за терпение.", scroll_text: "Прокрутите вниз", btn_continue: "Продолжить", recommended_title: "Рекомендуемые", coming_soon: "Скоро", sub_text: "Подписаться", subbed_text: "Вы подписаны", sub_count_suffix: "подписчиков • ABG Productions®", settings_title: "Настройки", theme_title: "Тема", logo_title: "Цвет лого", ade_title: "Рендеринг (ADE)", ade_on: "ADE: ВКЛ", ade_off: "ADE: ВЫКЛ", ade_desc: "Плавная работа интерфейса.", lang_title: "Язык", yt_title: "Больше контента?", yt_desc: "Поддержите на YouTube.", yt_btn: "Подписаться", history_title: "HV (История)", history_empty: "Пусто", history_clear: "Очистить", cf_title: "CF (Изменить Шрифт)", vc_title: "VC (Версия для ПК)", vc_btn_on: "Мобильный режим", vc_btn_off: "Режим ПК" },
             pt: { beta_title: "⚠️ Versão Beta!", beta_p1: "Olá a todos.", beta_p2: "Lembre-se:", beta_p3: "• Vídeos Ausentes", beta_p4: "• Erros", beta_p5: "Agradecemos o apoio.", scroll_text: "Deslize para baixo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Em breve", sub_text: "Inscrever-se", subbed_text: "Inscrito", sub_count_suffix: "inscritos • ABG Productions®", settings_title: "Configurações", theme_title: "Tema", logo_title: "Cor do Logo", ade_title: "Desempenho (ADE)", ade_on: "ADE: Ligado", ade_off: "ADE: Desligado", ade_desc: "Navegar de forma super fluida.", lang_title: "Idioma", yt_title: "Conteúdo oficial?", yt_desc: "Apoie no YouTube.", yt_btn: "Inscrever-se", history_title: "HV (Histórico)", history_empty: "Vazio", history_clear: "Limpar", cf_title: "CF (Mudar Fonte)", vc_title: "VC (Versão de PC)", vc_btn_on: "Mudar para Celular", vc_btn_off: "Mudar para Computador" },
-            zh: { beta_title: "⚠️ 测试版本！", beta_p1: "粉丝大家好。", beta_p2: "请注意：", beta_p3: "• 视频缺失", beta_p4: "• 临时错误", beta_p5: "感谢支持。", scroll_text: "向下滚动", btn_continue: "继续", recommended_title: "推荐视频", coming_soon: "即将推出", sub_text: "订阅", subbed_text: "已订阅", sub_count_suffix: "位订阅者 • ABG Productions®", settings_title: "设置", theme_title: "主题", logo_title: "标志颜色", ade_title: "性能 (ADE)", ade_on: "ADE: 开启", ade_off: "ADE: 关闭", ade_desc: "让页面流畅运行。", lang_title: "语言", yt_title: "官方内容？", yt_desc: "前往 YouTube 支持。", yt_btn: "订阅", history_title: "HV (历史)", history_empty: "无历史记录", history_clear: "清除历史", cf_title: "CF (修改字体)", vc_title: "VC (电脑模式)", vc_btn_on: "切换回手机", vc_btn_off: "切换到电脑" },
-            ja: { beta_title: "⚠️ ベータ版！", beta_p1: "皆様こんにちは。", beta_p2: "ご注意：", beta_p3: "• 動画未登録", beta_p4: "• エラーの可能性", beta_p5: "ご協力感謝します。", scroll_text: "下へスクロール", btn_continue: "続行", recommended_title: "おすすめ", coming_soon: "まもなく公開", sub_text: "登録", subbed_text: "登録済み", sub_count_suffix: "人 • ABG Productions®", settings_title: "設定", theme_title: "テーマ", logo_title: "ロゴの色", ade_title: "省電力 (ADE)", ade_on: "ADE: オン", ade_off: "ADE: オフ", ade_desc: "動作を軽くします。", lang_title: "言語", yt_title: "公式動画？", yt_desc: "YouTubeで応援。", yt_btn: "登録する", history_title: "HV (再生履歴)", history_empty: "履歴なし", history_clear: "削除", cf_title: "CF (フォント変更)", vc_title: "VC (PC版サイト)", vc_btn_on: "スマホ版に戻す", vc_btn_off: "PC版に切り替え" },
+            zh: { beta_title: "⚠️ 测试版本！", grid_p1: "粉丝大家好。", beta_p2: "请注意：", beta_p3: "• 视频缺失", beta_p4: "• 临时错误", beta_p5: "感谢支持。", scroll_text: "向下滚动", btn_continue: "继续", recommended_title: "推荐视频", coming_soon: "即将推出", sub_text: "订阅", subbed_text: "已订阅", sub_count_suffix: "位订阅者 • ABG Productions®", settings_title: "设置", theme_title: "主题", logo_title: "标志颜色", ade_title: "性能 (ADE)", ade_on: "ADE: 开启", ade_off: "ADE: 关闭", ade_desc: "让页面流畅运行。", lang_title: "语言", yt_title: "官方内容？", yt_desc: "前往 YouTube 支持。", yt_btn: "订阅", history_title: "HV (历史)", history_empty: "无历史记录", history_clear: "清除历史", cf_title: "CF (修改字体)", vc_title: "VC (电脑模式)", vc_btn_on: "切换回手机", vc_btn_off: "切换到电脑" },
+            ja: { beta_title: "⚠️ ベータ版！", beta_p1: "皆様こんにちは。", beta_p2: "ご注意：", beta_p3: "• 動画未登録", beta_p4: "• エラーの可能性", beta_p5: "ご協力感謝します。", scroll_text: "下へスクロール", btn_continue: "続行", recommended_title: "おすすめ", coming_soon: "まもなく公開", sub_text: "登録", subbed_text: "登録済み", sub_count_suffix: "人 • ABG Productions®", settings_title: "設定", theme_title: "テーマ", logo_title: "ロゴの色", ade_title: "省電力 (ADE)", ade_on: "ADE: オン", ade_off: "ADE: オフ", ade_desc: "动作を軽くします。", lang_title: "言語", yt_title: "公式動画？", yt_desc: "YouTubeで応援。", yt_btn: "登録する", history_title: "HV (再生履歴)", history_empty: "履歴なし", history_clear: "削除", cf_title: "CF (フォント変更)", vc_title: "VC (PC版サイト)", vc_btn_on: "スマホ版に戻す", vc_btn_off: "PC版に切り替え" },
             ko: { beta_title: "⚠️ 베타 버전!", beta_p1: "안녕하세요 구독자 여러분.", beta_p2: "주의 사항:", beta_p3: "• 누락된 비디오", beta_p4: "• 로딩 지연 오류", beta_p5: "감사합니다.", scroll_text: "아래로 스크롤", btn_continue: "계속하기", recommended_title: "추천 영상", coming_soon: "개봉 박두", sub_text: "구독", subbed_text: "구독중", sub_count_suffix: "명 • ABG Productions®", settings_title: "설정", theme_title: "시각 테마", logo_title: "로고 색상", ade_title: "성능 모드 (ADE)", ade_on: "ADE: 켜짐", ade_off: "ADE: 꺼짐", ade_desc: "웹을 빠르게 만듭니다.", lang_title: "언어 설정", yt_title: "공식 콘텐츠?", yt_desc: "YouTube 응원.", yt_btn: "구독하기", history_title: "HV (시청 기록)", history_empty: "기록 없음", history_clear: "기록 삭제", cf_title: "CF (글꼴 변경)", vc_title: "VC (PC 버전)", vc_btn_on: "모바일 모드", vc_btn_off: "컴퓨터 모드" },
             es_es: { beta_title: "⚠️ Versión Beta!", beta_p1: "Saludos a todos.", beta_p2: "A tener en cuenta:", beta_p3: "• Parrilla en mantenimiento", beta_p4: "• Errores temporales", beta_p5: "Gracias por vuestra paciencia.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Ajustes", theme_title: "Estilo Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Navegar con total fluidez.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin vídeos", history_clear: "Borrar", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Versión PC)", vc_btn_on: "Volver a Móvil", vc_btn_off: "Poner modo PC" },
             es_la: { beta_title: "⚠️ Versión Beta!", beta_p1: "Hola a todos.", beta_p2: "Ten en cuenta:", beta_p3: "• Grilla en mantenimiento", beta_p4: "• Retrasos leves", beta_p5: "Gracias por tu apoyo.", scroll_text: "Desliza abajo", btn_continue: "Continuar", recommended_title: "Recomendados", coming_soon: "Proximamente", sub_text: "Suscribirse", subbed_text: "Suscrito", sub_count_suffix: "suscriptores • ABG Productions®", settings_title: "Configuracion", theme_title: "Tema Visual", logo_title: "Color del Logo", ade_title: "Rendimiento (ADE)", ade_on: "ADE: Activado", ade_off: "ADE: Desactivado", ade_desc: "Hace que la pagina vaya super fluida.", lang_title: "Idioma", yt_title: "Contenido oficial?", yt_desc: "Apoya en YouTube.", yt_btn: "Suscribirse", history_title: "HV (Historial)", history_empty: "Sin videos", history_clear: "Borrar HV", cf_title: "CF (Cambiar Letra)", vc_title: "VC (Modo Escritorio)", vc_btn_on: "Regresar a Celular", vc_btn_off: "Forzar Modo Computadora" }
@@ -824,10 +1090,11 @@
         }
 
         function cambiarTema(tema) {
+            document.body.classList.remove('light-theme', 'gray-theme');
             if (tema === 'claro') {
                 document.body.classList.add('light-theme');
-            } else {
-                document.body.classList.remove('light-theme');
+            } else if (tema === 'gris') {
+                document.body.classList.add('gray-theme');
             }
         }
 
